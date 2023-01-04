@@ -5,6 +5,7 @@
   text-align: center;
   background-image: url('./src/assets/background.jpg');
   background-size: cover;
+  color: white;
 }
 
 .logo {
