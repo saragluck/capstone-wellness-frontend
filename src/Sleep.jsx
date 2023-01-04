@@ -1,4 +1,19 @@
+import strftime from "strftime";
+import { LogSleep } from "./LogSleep";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 export function Sleep(props) {
+  const [sleeps, setSleeps] = useState([]);
+
+  const handleLogSleep = (params, successCallback) => {
+    console.log("handleLogSleep", params);
+    axios.post("http://localhost:3000/sleeps.json", params).then((response) => {
+      setSleeps([...sleeps, response.data]);
+      successCallback();
+    });
+  };
+
   return (
     <div>
       <h1>Sleep</h1>
@@ -9,6 +24,7 @@ export function Sleep(props) {
           </h2>
         </div>
       ))}
+      <LogSleep onLogSleep={handleLogSleep} />
     </div>
   );
 }
