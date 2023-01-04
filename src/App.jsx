@@ -3,6 +3,9 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { LandingPage } from "./LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { Dashboard } from "./Dashboard";
 
 function App() {
   return (
