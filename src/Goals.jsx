@@ -1,4 +1,18 @@
+import { SetGoal } from "./SetGoal";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 export function Goals(props) {
+  const [goals, setGoals] = useState([]);
+
+  const handleSetGoal = (params, successCallback) => {
+    console.log("handleSetGoal", params);
+    axios.post("http://localhost:3000/goals.json", params).then((response) => {
+      setGoals([...goals, response.data]);
+      successCallback();
+    });
+  };
+
   return (
     <div>
       <h1>Goals</h1>
@@ -9,6 +23,7 @@ export function Goals(props) {
           </h2>
         </div>
       ))}
+      <SetGoal onSetGoal={handleSetGoal} />
     </div>
   );
 }
