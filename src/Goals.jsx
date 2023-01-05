@@ -50,6 +50,12 @@ export function Goals(props) {
     });
   };
 
+  const handleDestroyGoal = (goal) => {
+    axios.delete(`http://localhost:3000/goals/${goal.id}.json`).then((response) => {
+      setGoals(goals.filter((g) => g.id !== goal.id));
+      handleClose();
+    });
+  };
   const handleClose = () => {
     console.log("handleClose");
     setIsGoalsShowVisible(false);
@@ -60,7 +66,7 @@ export function Goals(props) {
       <GoalIndex goals={goals} onShowGoal={handleShowGoal} />
       <SetGoal onSetGoal={handleSetGoal} />
       <GoalsModal show={isGoalsShowVisible} onClose={handleClose}>
-        <GoalsShow goal={currentGoal} onUpdateGoal={handleUpdateGoal} />
+        <GoalsShow goal={currentGoal} onUpdateGoal={handleUpdateGoal} onDestroyGoal={handleDestroyGoal} />
       </GoalsModal>
     </div>
   );
