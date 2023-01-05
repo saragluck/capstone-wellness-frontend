@@ -38,12 +38,29 @@ export function Water(props) {
     setIsWatersShowVisible(false);
   };
 
+  const handleUpdateWater = (id, params, successCallback) => {
+    console.log("handleUpdateWater", params);
+    axios.patch(`http://localhost3000/waters/${id}.json`, params).then((response) => {
+      setWaters(
+        waters.map((water) => {
+          if (water.id === response.data.id) {
+            return response.data;
+          } else {
+            return water;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
   return (
     <div>
       <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
       <WaterModal show={isWatersShowVisible} onClose={handleClose}>
-        <WatersShow water={currentWater} />
+        <WatersShow water={currentWater} onUpdateWater={handleUpdateWater} />
       </WaterModal>
     </div>
   );
