@@ -28,6 +28,9 @@ export function Water(props) {
     <div>
       <WaterIndex waters={waters} />
       <LogWater onLogWater={handleLogWater} />
+      <WaterModal show={true}>
+        <h1>test</h1>
+      </WaterModal>
     </div>
   );
 }
