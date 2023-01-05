@@ -2,6 +2,7 @@ import { LogWater } from "./LogWater";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { WaterIndex } from "./WaterIndex";
+import { WaterModal } from "./WaterModal";
 
 export function Water(props) {
   const [waters, setWaters] = useState([]);
