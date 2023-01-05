@@ -5,6 +5,10 @@ export function WatersShow(props) {
     props.onUpdateWater(props.water.id, params, () => event.target.reset());
   };
 
+  const handleClick = () => {
+    props.onDestroyWater(props.water);
+  };
+
   return (
     <div>
       <h1>Water Info</h1>
@@ -22,6 +26,7 @@ export function WatersShow(props) {
           date: <input defaultValue={props.water.date} name="date" type="text" />
         </div>
         <button type="submit">Update</button>
+        <button onClick={handleClick}>Delete Water</button>
       </form>
     </div>
   );
