@@ -6,6 +6,8 @@ import { WaterModal } from "./WaterModal";
 
 export function Water(props) {
   const [waters, setWaters] = useState([]);
+  const [isWatersShowVisible, setIsWatersShowVisible] = useState(false);
+  const [currentWater, setCurrentWater] = useState({});
 
   const handleWaterIndex = () => {
     axios.get("http://localhost:3000/waters.json").then((response) => {
@@ -24,11 +26,21 @@ export function Water(props) {
     });
   };
 
+  const handleShowWater = (water) => {
+    console.log("handleShowWater", water);
+    setIsWatersShowVisible(true);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsWatersShowVisible(false);
+  };
+
   return (
     <div>
-      <WaterIndex waters={waters} />
+      <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
-      <WaterModal show={true}>
+      <WaterModal show={isWatersShowVisible} onClose={handleClose}>
         <h1>test</h1>
       </WaterModal>
     </div>
