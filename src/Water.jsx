@@ -55,12 +55,20 @@ export function Water(props) {
     });
   };
 
+  const handleDestroyWater = (water) => {
+    console.log("handleDestroy", water);
+    axios.delete(`http://localhost:3000/waters/${water.id}.json`).then((response) => {
+      setWaters(waters.filter((w) => w.id !== water.id));
+      handleClose();
+    });
+  };
+
   return (
     <div>
       <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
       <WaterModal show={isWatersShowVisible} onClose={handleClose}>
-        <WatersShow water={currentWater} onUpdateWater={handleUpdateWater} />
+        <WatersShow water={currentWater} onUpdateWater={handleUpdateWater} onDestroyWater={handleDestroyWater} />
       </WaterModal>
     </div>
   );
