@@ -1,7 +1,6 @@
 import { Sleep } from "./Sleep";
 import { Water } from "./Water";
 import { Goals } from "./Goals";
-import { SleepModal } from "./SleepModal";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -42,9 +41,10 @@ export function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Goals goals={goals} />
-      <Sleep sleeps={sleeps} />
-      <Water waters={waters} />
+      <Goals />
+      <h1>words</h1>
+      <Sleep />
+      <Water />
     </div>
   );
 }

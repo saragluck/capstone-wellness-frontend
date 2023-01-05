@@ -7,7 +7,7 @@ export function SleepIndex(props) {
           <h2>
             I slept from {sleep.asleep} to {sleep.awake} on {sleep.date}.
           </h2>
-          <button onClick={() => props.onEditSleep(sleep)}>Edit</button>
+          <button onClick={() => props.onShowSleep(sleep)}>Edit</button>
         </div>
       ))}
     </div>

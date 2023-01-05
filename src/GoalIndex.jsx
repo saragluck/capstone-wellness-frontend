@@ -7,6 +7,7 @@ export function GoalIndex(props) {
           <h2>
             I want to drink {goal.goal} of {goal.category}.
           </h2>
+          <button>Edit</button>
         </div>
       ))}
       ;

@@ -1,14 +1,14 @@
-import strftime from "strftime";
-import { LogSleep } from "./LogSleep";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { SleepModal } from "./SleepModal";
 import { SleepIndex } from "./SleepIndex";
+import { LogSleep } from "./LogSleep";
+import { SleepModal } from "./SleepModal";
+import { SleepsShow } from "./SleepsShow";
 
 export function Sleep(props) {
-  const [isSleepModalVisible, setIsSleepModalVisible] = useState(false);
-  const [currentSleep, setCurrentSleep] = useState({});
   const [sleeps, setSleeps] = useState([]);
+  const [isSleepsShowVisible, setIsSleepsShowVisible] = useState(false);
+  const [currentSleep, setCurrentSleep] = useState({});
 
   const handleSleepIndex = () => {
     axios.get("http://localhost:3000/sleeps.json").then((response) => {
@@ -25,24 +25,54 @@ export function Sleep(props) {
       setSleeps([...sleeps, response.data]);
       successCallback();
     });
-
-    const handleSleepModal = (sleep) => {
-      console.log("handleSleepModal", sleep);
-      setIsSleepModalVisible(true);
-      setCurrentSleep(sleep);
-    };
-
-    const handleClose = () => {
-      console.log("handleClose");
-      setIsSleepModalVisible(false);
-    };
   };
+
+  const handleShowSleep = (sleep) => {
+    console.log("handleShowSleep", sleep);
+    setIsSleepsShowVisible(true);
+    setCurrentSleep(sleep);
+  };
+
+  const handleUpdateSleep = (id, params, successCallback) => {
+    console.log("handleUpdateSleep", params);
+    axios.patch(`http://localhost:3000/sleeps/${id}.json`, params).then((response) => {
+      setSleeps(
+        sleeps.map((sleep) => {
+          if (sleep.id === response.data.id) {
+            return response.data;
+          } else {
+            return sleep;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsSleepsShowVisible(false);
+  };
+
+  const handleDestroySleep = (sleep) => {
+    console.log("handleDestroy", sleep);
+    axios.delete(`http://localhost:3000/sleeps/${sleep.id}.json`).then((response) => {
+      setSleeps(sleeps.filter((s) => s.id !== sleep.id));
+      handleClose();
+    });
+  };
+
+  useEffect(handleSleepIndex, []);
 
   return (
     <div>
-      <SleepIndex sleeps={sleeps} />
+      <h1>TEST DOES IT SHOW UP </h1>
+      <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
       <LogSleep onLogSleep={handleLogSleep} />
-      <SleepModal show={true}></SleepModal>
+      <SleepModal show={isSleepsShowVisible} onClose={handleClose}>
+        <SleepsShow sleep={currentSleep} onUpdateSleep={handleUpdateSleep} onDestroySleep={handleDestroySleep} />
+      </SleepModal>
     </div>
   );
 }
