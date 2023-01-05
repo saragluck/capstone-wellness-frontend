@@ -7,6 +7,7 @@ export function WaterIndex(props) {
           <h2>
             I drank {water.amount} of water at {water.time} on {water.date}.
           </h2>
+          <button onClick={() => props.onShowWater(water)}>Edit</button>
         </div>
       ))}
     </div>
