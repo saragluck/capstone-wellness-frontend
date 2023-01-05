@@ -2,7 +2,7 @@ export function WatersShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onUpdateWater(props.water.id, params, () evemt.target.reset());
+    props.onUpdateWater(props.water.id, params, () => event.target.reset());
   };
 
   return (
