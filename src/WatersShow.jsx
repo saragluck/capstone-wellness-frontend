@@ -21,6 +21,7 @@ export function WatersShow(props) {
         <div>
           date: <input defaultValue={props.water.date} name="date" type="text" />
         </div>
+        <button type="submit">Update</button>
       </form>
     </div>
   );
