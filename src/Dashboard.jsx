@@ -1,6 +1,7 @@
 import { Sleep } from "./Sleep";
 import { Water } from "./Water";
 import { Goals } from "./Goals";
+import { SleepModal } from "./SleepModal";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
