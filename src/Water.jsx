@@ -1,7 +1,7 @@
-import { LogWater } from "./LogWater";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { WaterIndex } from "./WaterIndex";
+import { LogWater } from "./LogWater";
 import { WaterModal } from "./WaterModal";
 import { WatersShow } from "./WatersShow";
 
@@ -40,7 +40,7 @@ export function Water(props) {
 
   const handleUpdateWater = (id, params, successCallback) => {
     console.log("handleUpdateWater", params);
-    axios.patch(`http://localhost3000/waters/${id}.json`, params).then((response) => {
+    axios.patch(`http://localhost:3000/waters/${id}.json`, params).then((response) => {
       setWaters(
         waters.map((water) => {
           if (water.id === response.data.id) {

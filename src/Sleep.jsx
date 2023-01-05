@@ -32,7 +32,12 @@ export function Sleep(props) {
     setIsSleepsShowVisible(true);
     setCurrentSleep(sleep);
   };
-
+  
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsSleepsShowVisible(false);
+  };
+  
   const handleUpdateSleep = (id, params, successCallback) => {
     console.log("handleUpdateSleep", params);
     axios.patch(`http://localhost:3000/sleeps/${id}.json`, params).then((response) => {
@@ -49,11 +54,7 @@ export function Sleep(props) {
       handleClose();
     });
   };
-
-  const handleClose = () => {
-    console.log("handleClose");
-    setIsSleepsShowVisible(false);
-  };
+  
 
   const handleDestroySleep = (sleep) => {
     console.log("handleDestroy", sleep);
