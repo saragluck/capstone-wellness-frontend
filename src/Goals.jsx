@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { GoalIndex } from "./GoalIndex";
 import { GoalsModal } from "./GoalsModal";
+import { GoalsShow } from "./GoalsShow";
 
 export function Goals(props) {
   const [goals, setGoals] = useState([]);
@@ -42,7 +43,7 @@ export function Goals(props) {
       <GoalIndex goals={goals} onShowGoal={handleShowGoal} />
       <SetGoal onSetGoal={handleSetGoal} />
       <GoalsModal show={isGoalsShowVisible} onClose={handleClose}>
-        <h1>test</h1>
+        <GoalsShow goal={currentGoal} />
       </GoalsModal>
     </div>
   );
