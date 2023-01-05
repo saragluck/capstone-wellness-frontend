@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { WaterIndex } from "./WaterIndex";
 import { WaterModal } from "./WaterModal";
+import { WatersShow } from "./WatersShow";
 
 export function Water(props) {
   const [waters, setWaters] = useState([]);
@@ -29,6 +30,7 @@ export function Water(props) {
   const handleShowWater = (water) => {
     console.log("handleShowWater", water);
     setIsWatersShowVisible(true);
+    setCurrentWater(water);
   };
 
   const handleClose = () => {
@@ -41,7 +43,7 @@ export function Water(props) {
       <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
       <WaterModal show={isWatersShowVisible} onClose={handleClose}>
-        <h1>test</h1>
+        <WatersShow water={currentWater} />
       </WaterModal>
     </div>
   );
