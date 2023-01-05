@@ -6,6 +6,8 @@ import { GoalsModal } from "./GoalsModal";
 
 export function Goals(props) {
   const [goals, setGoals] = useState([]);
+  const [isGoalsShowVisible, setIsGoalsShowVisible] = useState({});
+  const [currentGoal, setCurrentGoal] = useState({});
 
   const handleGoalIndex = () => {
     axios.get("http://localhost:3000/goals.json").then((response) => {
@@ -24,11 +26,22 @@ export function Goals(props) {
     });
   };
 
+  const handleShowGoal = (goal) => {
+    console.log("handleShowGoal", goal);
+    setIsGoalsShowVisible(true);
+    setCurrentGoal(goal);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsGoalsShowVisible(false);
+  };
+
   return (
     <div>
-      <GoalIndex goals={goals} />
+      <GoalIndex goals={goals} onShowGoal={handleShowGoal} />
       <SetGoal onSetGoal={handleSetGoal} />
-      <GoalsModal show={true}>
+      <GoalsModal show={isGoalsShowVisible} onClose={handleClose}>
         <h1>test</h1>
       </GoalsModal>
     </div>
