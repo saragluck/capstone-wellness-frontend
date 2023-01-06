@@ -10,7 +10,6 @@ export function GoalIndex(props) {
           <button onClick={() => props.onShowGoal(goal)}>Edit</button>
         </div>
       ))}
-      ;
     </div>
   );
 }
