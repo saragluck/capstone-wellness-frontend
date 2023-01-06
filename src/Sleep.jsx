@@ -18,6 +18,9 @@ export function Sleep(props) {
     });
   };
 
+  const handleSleepGraph = () => {
+    axios.get("http://localhost:3000/sleeps.json");
+  };
   useEffect(handleSleepIndex, []);
 
   const handleLogSleep = (params, successCallback) => {
@@ -70,7 +73,7 @@ export function Sleep(props) {
     <div>
       <h1>TEST DOES IT SHOW UP </h1>
       <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
-      <SleepGraph />
+      <SleepGraph sleeps={sleeps} useEffect={handleSleepGraph} />
       <LogSleep onLogSleep={handleLogSleep} />
       <SleepModal show={isSleepsShowVisible} onClose={handleClose}>
         <SleepsShow sleep={currentSleep} onUpdateSleep={handleUpdateSleep} onDestroySleep={handleDestroySleep} />

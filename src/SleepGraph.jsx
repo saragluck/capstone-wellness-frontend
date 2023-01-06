@@ -9,8 +9,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import moment from "moment";
 
-export function SleepGraph() {
+export function SleepGraph(props) {
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
   //   let sleepDate = [];
   //   let sleepDuration = [];
@@ -21,12 +22,18 @@ export function SleepGraph() {
   //   .catch(error => {
   //     console.log(error);
   //   })
+  const duration = props.sleeps.map((sleep) =>
+    Math.abs(
+      moment.duration(moment(sleep.awake, "YYYY/MM/DD hh:mm").diff(moment(sleep.asleep, "YYYY/MM/DD hh:mm"))).asHours()
+    )
+  );
+
   const data = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    labels: [{ duration }],
     datasets: [
       {
         label: "First dataset",
-        data: [33, 53, 85, 41, 44, 65],
+        data: [{ duration }],
         fill: true,
         backgroundColor: "rgba(75,192,192,0.2)",
         borderColor: "rgba(75,192,192,1)",
