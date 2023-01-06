@@ -4,6 +4,7 @@ import { SleepIndex } from "./SleepIndex";
 import { LogSleep } from "./LogSleep";
 import { SleepModal } from "./SleepModal";
 import { SleepsShow } from "./SleepsShow";
+import { SleepGraph } from "./SleepGraph";
 
 export function Sleep(props) {
   const [sleeps, setSleeps] = useState([]);
@@ -69,6 +70,7 @@ export function Sleep(props) {
     <div>
       <h1>TEST DOES IT SHOW UP </h1>
       <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
+      <SleepGraph />
       <LogSleep onLogSleep={handleLogSleep} />
       <SleepModal show={isSleepsShowVisible} onClose={handleClose}>
         <SleepsShow sleep={currentSleep} onUpdateSleep={handleUpdateSleep} onDestroySleep={handleDestroySleep} />
