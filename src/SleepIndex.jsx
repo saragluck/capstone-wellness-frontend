@@ -11,14 +11,17 @@ export function SleepIndex(props) {
         <div key={sleep.id}>
           <h2>
             I slept from {moment(sleep.asleep).tz("GMT").format("hh:mm A")} to{" "}
-            {moment(sleep.awake).tz("GMT").format("hh:mm A")} on {moment(sleep.date).format("MMMM Do, YYYY")}. Duration:{" "}
+            {moment(sleep.awake).tz("GMT").format("hh:mm A")} on {moment(sleep.date).format("MMMM Do, YYYY")}.
+          </h2>
+          <h3>
+            Duration:{" "}
             {Math.abs(
               moment
                 .duration(moment(sleep.awake, "YYYY/MM/DD hh:mm").diff(moment(sleep.asleep, "YYYY/MM/DD hh:mm")))
                 .asHours()
             )}{" "}
             hours
-          </h2>
+          </h3>
           <button onClick={() => props.onShowSleep(sleep)}>Edit</button>
         </div>
       ))}
