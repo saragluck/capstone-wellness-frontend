@@ -4,6 +4,7 @@ import { WaterIndex } from "./WaterIndex";
 import { LogWater } from "./LogWater";
 import { WaterModal } from "./WaterModal";
 import { WatersShow } from "./WatersShow";
+import WaterGraph from "./WaterGraph";
 
 export function Water(props) {
   const [waters, setWaters] = useState([]);
@@ -67,6 +68,7 @@ export function Water(props) {
     <div>
       <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
+      <WaterGraph />
       <WaterModal show={isWatersShowVisible} onClose={handleClose}>
         <WatersShow water={currentWater} onUpdateWater={handleUpdateWater} onDestroyWater={handleDestroyWater} />
       </WaterModal>
