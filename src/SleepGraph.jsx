@@ -1,49 +1,26 @@
+import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import moment from "moment";
 
-export function SleepGraph(props) {
-  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-  //   let sleepDate = [];
-  //   let sleepDuration = [];
-  //   axios.get("http://localhost:3000/sleeps.json").then((response) => {
-  //     console.log("response")
-  //     for(constSleepDuration of response.);
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   })
-  const duration = props.sleeps.map((sleep) =>
-    Math.abs(
-      moment.duration(moment(sleep.awake, "YYYY/MM/DD hh:mm").diff(moment(sleep.asleep, "YYYY/MM/DD hh:mm"))).asHours()
-    )
-  );
+const labels = ["1/01", "1/02", "1/03", "1/04", "1/05", "1/06", "1/07", "1/08", "1/09"];
 
-  const data = {
-    labels: [{ duration }],
-    datasets: [
-      {
-        label: "First dataset",
-        data: [{ duration }],
-        fill: true,
-        backgroundColor: "rgba(75,192,192,0.2)",
-        borderColor: "rgba(75,192,192,1)",
-      },
-    ],
-  };
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: "Sleep Duration",
+      backgroundColor: "rgb(255, 99, 132)",
+      borderColor: "rgb(132, 99, 255)",
+      data: [6, 6.5, 6.75, 4.5, 7.5, 5.5, 6, 6.75, 7],
+    },
+  ],
+};
+
+const SleepGraph = () => {
   return (
     <div>
-      <h1>graph</h1>
       <Line data={data} />
     </div>
   );
-}
+};
+
+export default SleepGraph;
