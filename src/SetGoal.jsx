@@ -6,7 +6,7 @@ export function SetGoal(props) {
   };
 
   return (
-    <div>
+    <div id="setgoal">
       <h1>Set Goal</h1>
       <form onSubmit={handleSubmit}>
         <div>

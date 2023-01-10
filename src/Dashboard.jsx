@@ -5,6 +5,7 @@ import { Productivity } from "./Productivity";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { LogoutLink } from "./LogoutLink";
+import { Link } from "react-router-dom";
 
 export function Dashboard() {
   const [goals, setGoals] = useState([]);
@@ -44,18 +45,22 @@ export function Dashboard() {
     <div>
       <LogoutLink />
       <h1>Dashboard</h1>
-      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
-        Set Goal
-      </button>
-      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
-        Log Sleep
-      </button>
-      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
-        Log Water
-      </button>
-      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
-        Log Productivity
-      </button>
+      <div>
+        <Link to="#setgoal">
+          <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+            Set Goal
+          </button>
+        </Link>
+        <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+          Log Sleep
+        </button>{" "}
+        <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+          Log Water
+        </button>{" "}
+        <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+          Log Productivity
+        </button>
+      </div>
       <Goals />
       <Sleep />
       <Productivity />
