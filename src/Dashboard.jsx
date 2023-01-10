@@ -44,6 +44,18 @@ export function Dashboard() {
     <div>
       <LogoutLink />
       <h1>Dashboard</h1>
+      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+        Set Goal
+      </button>
+      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+        Log Sleep
+      </button>
+      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+        Log Water
+      </button>
+      <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
+        Log Productivity
+      </button>
       <Goals />
       <Sleep />
       <Productivity />
