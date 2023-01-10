@@ -12,9 +12,6 @@ export function SleepsShow(props) {
   return (
     <div>
       <h1> Sleep Info </h1>
-      <h2>Asleep: {props.sleep.asleep} </h2>
-      <h2>Awake: {props.sleep.awake}</h2>
-      <h2>Date: {props.sleep.date} </h2>
       <form onSubmit={handleSubmit}>
         <div>
           Asleep: <input defaultValue={props.sleep.asleep} name="asleep" type="time" />

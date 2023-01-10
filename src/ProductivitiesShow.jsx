@@ -12,9 +12,6 @@ export function ProductivitiesShow(props) {
   return (
     <div>
       <h1>Productivity Info</h1>
-      <h2>Level: {props.productivity.level}</h2>
-      <h2>Time: {props.productivity.time} </h2>
-      <h2>Date: {props.productivity.date}</h2>
       <form onSubmit={handleSubmit}>
         <div>
           Level: <input defaultValue={props.productivity.level} name="level" type="text" />
