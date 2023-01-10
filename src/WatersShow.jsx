@@ -20,10 +20,10 @@ export function WatersShow(props) {
           Amount: <input defaultValue={props.water.amount} name="amount" type="text" />
         </div>
         <div>
-          time: <input defaultValue={props.water.time} name="time" type="text" />
+          time: <input defaultValue={props.water.time} name="time" type="time" />
         </div>
         <div>
-          date: <input defaultValue={props.water.date} name="date" type="text" />
+          date: <input defaultValue={props.water.date} name="date" type="date" />
         </div>
         <button type="submit">Update</button>
         <button onClick={handleClick}>Delete Water</button>

@@ -13,10 +13,10 @@ export function LogWater(props) {
           Amount: <input name="amount" type="text" />
         </div>
         <div>
-          Time: <input name="time" type="text" />
+          Time: <input name="time" type="time" />
         </div>
         <div>
-          Date: <input name="date" type="text" />
+          Date: <input name="date" type="date" />
         </div>
         <button type="submit">Log Water</button>
       </form>

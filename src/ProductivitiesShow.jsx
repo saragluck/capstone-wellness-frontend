@@ -20,10 +20,10 @@ export function ProductivitiesShow(props) {
           Level: <input defaultValue={props.productivity.level} name="level" type="text" />
         </div>
         <div>
-          time: <input defaultValue={props.productivity.time} name="time" type="text" />
+          time: <input defaultValue={props.productivity.time} name="time" type="time" />
         </div>
         <div>
-          date: <input defaultValue={props.productivity.date} name="date" type="text" />
+          date: <input defaultValue={props.productivity.date} name="date" type="date" />
         </div>
         <button type="submit">Update</button>
         <button onClick={handleClick}>Delete Productivity</button>
