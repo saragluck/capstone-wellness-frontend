@@ -7,7 +7,7 @@ import { GoalsShow } from "./GoalsShow";
 
 export function Goals(props) {
   const [goals, setGoals] = useState([]);
-  const [isGoalsShowVisible, setIsGoalsShowVisible] = useState({});
+  const [isGoalsShowVisible, setIsGoalsShowVisible] = useState(false);
   const [currentGoal, setCurrentGoal] = useState({});
 
   const handleGoalIndex = () => {
