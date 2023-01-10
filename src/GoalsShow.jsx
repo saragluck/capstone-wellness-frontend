@@ -14,13 +14,29 @@ export function GoalsShow(props) {
       <h1>Goal</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Goal: <input defaultValue={props.goal.goal} name="goal" type="text" />
+          Goal:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.goal.goal}
+            name="goal"
+            type="text"
+          />
         </div>
         <div>
-          Category: <input defaultValue={props.goal.category} name="category" type="text" />
+          Category:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.goal.category}
+            name="category"
+            type="text"
+          />
         </div>
-        <button type="submit">Update</button>
-        <button onClick={handleClick}>Destroy Goal</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Update
+        </button>
+        <button className="btn btn-outline-dark rounded-pill" onClick={handleClick}>
+          Destroy Goal
+        </button>
       </form>
     </div>
   );

@@ -10,15 +10,17 @@ export function LogWater(props) {
       <h1>Log Water</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Amount: <input name="amount" type="text" />
+          Amount: <input className="bg-transparent form-control rounded-pill" name="amount" type="text" />
         </div>
         <div>
-          Time: <input name="time" type="time" />
+          Time: <input className="bg-transparent form-control rounded-pill" name="time" type="time" />
         </div>
         <div>
-          Date: <input name="date" type="date" />
+          Date: <input className="bg-transparent form-control rounded-pill" name="date" type="date" />
         </div>
-        <button type="submit">Log Water</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Log Water
+        </button>
       </form>
     </div>
   );

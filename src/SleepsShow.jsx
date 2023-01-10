@@ -14,16 +14,16 @@ export function SleepsShow(props) {
       <h1> Sleep Info </h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Asleep: <input defaultValue={props.sleep.asleep} name="asleep" type="time" />
+          Asleep: <input className="bg-transparent form-control rounded-pill" defaultValue={props.sleep.asleep} name="asleep" type="time" />
         </div>
         <div>
-          awake: <input defaultValue={props.sleep.awake} name="awake" type="time" />
+          awake: <input className="bg-transparent form-control rounded-pill" defaultValue={props.sleep.awake} name="awake" type="time" />
         </div>
         <div>
-          date: <input defaultValue={props.sleep.date} name="date" type="date" />
+          date: <input className="bg-transparent form-control rounded-pill" defaultValue={props.sleep.date} name="date" type="date" />
         </div>
-        <button type="submit">Update Info</button>
-        <button onClick={handleClick}>Delete</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">Update Info</button>
+        <button className="btn btn-outline-dark rounded-pill" onClick={handleClick}>Delete</button>
       </form>
     </div>
   );

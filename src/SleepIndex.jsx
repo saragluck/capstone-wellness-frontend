@@ -22,7 +22,9 @@ export function SleepIndex(props) {
             )}{" "}
             hours
           </h3>
-          <button onClick={() => props.onShowSleep(sleep)}>Edit</button>
+          <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowSleep(sleep)}>
+            Edit
+          </button>
         </div>
       ))}
     </div>

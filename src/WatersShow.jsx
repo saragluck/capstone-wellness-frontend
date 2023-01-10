@@ -14,16 +14,38 @@ export function WatersShow(props) {
       <h1>Water Info</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Amount: <input defaultValue={props.water.amount} name="amount" type="text" />
+          Amount:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.water.amount}
+            name="amount"
+            type="text"
+          />
         </div>
         <div>
-          time: <input defaultValue={props.water.time} name="time" type="time" />
+          time:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.water.time}
+            name="time"
+            type="time"
+          />
         </div>
         <div>
-          date: <input defaultValue={props.water.date} name="date" type="date" />
+          date:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.water.date}
+            name="date"
+            type="date"
+          />
         </div>
-        <button type="submit">Update</button>
-        <button onClick={handleClick}>Delete Water</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Update
+        </button>
+        <button className="btn btn-outline-dark rounded-pill" onClick={handleClick}>
+          Delete Water
+        </button>
       </form>
     </div>
   );

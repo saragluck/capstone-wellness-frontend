@@ -10,15 +10,17 @@ export function LogSleep(props) {
       <h1>Log Sleep</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Asleep: <input name="asleep" type="time" />
+          Asleep: <input className="bg-transparent form-control rounded-pill" name="asleep" type="time" />
         </div>
         <div>
-          Awake: <input name="awake" type="time" />
+          Awake: <input className="bg-transparent form-control rounded-pill" name="awake" type="time" />
         </div>
         <div>
-          Date: <input name="date" type="date" />
+          Date: <input className="bg-transparent form-control rounded-pill" name="date" type="date" />
         </div>
-        <button type="submit">Log Sleep</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Log Sleep
+        </button>
       </form>
     </div>
   );

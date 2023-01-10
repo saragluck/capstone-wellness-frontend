@@ -14,7 +14,7 @@ export function ProductivityIndex(props) {
                 My productivity measured {productivity.level} at {moment(productivity.time).tz("GMT").format("hh:mm A")} on{" "}
                 {moment(productivity.date).format("MMMM Do, YYYY")}.
               </h2>
-              <button onClick={() => props.onShowProductivity(productivity)}>Edit</button>
+              <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowProductivity(productivity)}>Edit</button>
             </div>
           )
         )

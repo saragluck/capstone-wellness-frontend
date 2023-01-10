@@ -7,7 +7,7 @@ export function GoalIndex(props) {
           <h2>
             I want to drink {goal.goal} of {goal.category}.
           </h2>
-          <button onClick={() => props.onShowGoal(goal)}>Edit</button>
+          <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowGoal(goal)}>Edit</button>
         </div>
       ))}
     </div>

@@ -10,15 +10,17 @@ export function LogProductivity(props) {
       <h1>Log Productivity</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Level: <input name="level" type="integer" />
+          Level: <input className="bg-transparent form-control rounded-pill" name="level" type="integer" />
         </div>
         <div>
-          Time: <input name="time" type="time" />
+          Time: <input className="bg-transparent form-control rounded-pill" name="time" type="time" />
         </div>
         <div>
-          Date: <input name="date" type="date" />
+          Date: <input className="bg-transparent form-control rounded-pill" name="date" type="date" />
         </div>
-        <button type="submit">Log Productivity</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Log Productivity
+        </button>
       </form>
     </div>
   );

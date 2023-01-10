@@ -14,16 +14,36 @@ export function ProductivitiesShow(props) {
       <h1>Productivity Info</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Level: <input defaultValue={props.productivity.level} name="level" type="text" />
+          Level:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.productivity.level}
+            name="level"
+            type="text"
+          />
         </div>
         <div>
-          time: <input defaultValue={props.productivity.time} name="time" type="time" />
+          time:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.productivity.time}
+            name="time"
+            type="time"
+          />
         </div>
         <div>
-          date: <input defaultValue={props.productivity.date} name="date" type="date" />
+          date:{" "}
+          <input
+            className="bg-transparent form-control rounded-pill"
+            defaultValue={props.productivity.date}
+            name="date"
+            type="date"
+          />
         </div>
-        <button type="submit">Update</button>
-        <button onClick={handleClick}>Delete Productivity</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">Update</button>
+        <button className="btn btn-outline-dark rounded-pill" onClick={handleClick}>
+          Delete Productivity
+        </button>
       </form>
     </div>
   );
