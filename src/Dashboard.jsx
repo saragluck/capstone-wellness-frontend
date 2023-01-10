@@ -1,6 +1,7 @@
 import { Sleep } from "./Sleep";
 import { Water } from "./Water";
 import { Goals } from "./Goals";
+import { Productivity } from "./Productivity";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -44,6 +45,7 @@ export function Dashboard() {
       <Goals />
       <h1>words</h1>
       <Sleep />
+      <Productivity />
       <Water />
     </div>
   );
