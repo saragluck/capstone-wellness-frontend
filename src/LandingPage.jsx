@@ -2,26 +2,27 @@ import "./App.css";
 import "./index.css";
 import { Signup } from "./Signup.jsx";
 import { Login } from "./Login.jsx";
+import { Link } from "react-router-dom";
 
 export function LandingPage() {
   return (
     <div>
-      <h1>landing page</h1>
-      <h2>of my capstone</h2>
       <br />
       <br />
       <br />
       <br />
       <div className="container col sm-3">
-        <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
-          Sign Up
-        </button>
-        <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
-          Log In
-        </button>
+        <Link to="/signup">
+          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+            Sign Up
+          </button>
+        </Link>
+        <Link to="/login">
+          <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
+            Log In
+          </button>
+        </Link>
       </div>
-      <Signup />
-      <Login />
       <br />
       <br />
       <br />
