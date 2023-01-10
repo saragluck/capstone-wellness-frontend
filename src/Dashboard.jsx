@@ -43,7 +43,6 @@ export function Dashboard() {
     <div>
       <h1>Dashboard</h1>
       <Goals />
-      <h1>words</h1>
       <Sleep />
       <Productivity />
       <Water />

@@ -71,7 +71,6 @@ export function Sleep(props) {
 
   return (
     <div>
-      <h1>TEST DOES IT SHOW UP </h1>
       <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
       <SleepGraph />
       <LogSleep onLogSleep={handleLogSleep} />
