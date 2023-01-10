@@ -26,12 +26,12 @@ export function Productivity(props) {
   const handleLogProductivity = (params, successCallback) => {
     console.log("handleLogProductvity", params);
     axios.post("http://localhost:3000/productivity.json", params).then((response) => {
-      setSleeps([...productivities, response.data]);
+      setProductivities([...productivities, response.data]);
       successCallback();
     });
   };
 
-  const handleShowProductivity = (sleep) => {
+  const handleShowProductivity = (productivity) => {
     console.log("handleShowProductvity", productivity);
     setIsProductivitiesShowVisible(true);
     setCurrentProductivity(productivity);
@@ -61,7 +61,7 @@ export function Productivity(props) {
 
   const handleDestroyProductivity = (productivity) => {
     console.log("handleDestroy", productivity);
-    axios.delete(`http://localhost:3000/productivity/${productvity.id}.json`).then((response) => {
+    axios.delete(`http://localhost:3000/productivity/${productivity.id}.json`).then((response) => {
       setProductivities(productivities.filter((p) => p.id !== productivity.id));
       handleClose();
     });
