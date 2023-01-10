@@ -1,4 +1,5 @@
 import moment from "moment";
+import "moment-timezone";
 
 export function ProductivityIndex(props) {
   return (
@@ -10,7 +11,7 @@ export function ProductivityIndex(props) {
           (
             <div key={productivity.id}>
               <h2>
-                My productivity measured {productivity.level} at {moment(productivity.time).format("hh:mm")} on{" "}
+                My productivity measured {productivity.level} at {moment(productivity.time).tz("GMT").format("hh:mm A")} on{" "}
                 {moment(productivity.date).format("MMMM Do, YYYY")}.
               </h2>
               <button onClick={() => props.onShowProductivity(productivity)}>Edit</button>

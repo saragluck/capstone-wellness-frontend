@@ -1,4 +1,5 @@
 import moment from "moment";
+import "moment-timezone";
 
 export function WaterIndex(props) {
   return (
@@ -7,7 +8,7 @@ export function WaterIndex(props) {
       {props.waters.map((water) => (
         <div key={water.id}>
           <h2>
-            I drank {water.amount} of water at {moment(water.time).format("hh:mm")} on{" "}
+            I drank {water.amount} of water at {moment(water.time).tz("GMT").format("hh:mm A")} on{" "}
             {moment(water.date).format("MMMM Do, YYYY")}.
           </h2>
           <button onClick={() => props.onShowWater(water)}>Edit</button>
