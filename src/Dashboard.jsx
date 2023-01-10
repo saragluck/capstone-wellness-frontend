@@ -4,6 +4,7 @@ import { Goals } from "./Goals";
 import { Productivity } from "./Productivity";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { LogoutLink } from "./LogoutLink";
 
 export function Dashboard() {
   const [goals, setGoals] = useState([]);
@@ -41,6 +42,7 @@ export function Dashboard() {
 
   return (
     <div>
+      <LogoutLink />
       <h1>Dashboard</h1>
       <Goals />
       <Sleep />
