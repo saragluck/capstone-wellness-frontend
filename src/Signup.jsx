@@ -31,17 +31,36 @@ export function Signup() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input className="bg-transparent form-control rounded-pill" name="name" type="text" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            name="name"
+            type="text"
+            placeholder="Name"
+          />
         </div>
         <div>
-          Email: <input className="bg-transparent form-control rounded-pill" name="email" type="email" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            name="email"
+            type="email"
+            placeholder="Email"
+          />
         </div>
         <div>
-          Password: <input className="bg-transparent form-control rounded-pill" name="password" type="password" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
         </div>
         <div>
-          Password confirmation:{" "}
-          <input className="bg-transparent form-control rounded-pill" name="password_confirmation" type="password" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            name="password_confirmation"
+            type="password"
+            placeholder="Password Confirmation"
+          />
         </div>
         <button className="btn btn-outline-dark rounded-pill" type="submit">
           Signup

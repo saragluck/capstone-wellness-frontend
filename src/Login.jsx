@@ -38,12 +38,24 @@ export function Login() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Email: <input className="bg-transparent form-control rounded-pill" name="email" type="email" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            placeholder="Email"
+            name="email"
+            type="email"
+          />
         </div>
         <div>
-          Password: <input className="bg-transparent form-control rounded-pill" name="password" type="password" />
+          <input
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
         </div>
-        <button className="btn btn-outline-dark rounded-pill" type="submit">Login</button>
+        <button className="btn btn-outline-dark rounded-pill" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
