@@ -1,21 +1,46 @@
 import Chart from "chart.js/auto";
+import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-
-const labels = ["1/01", "1/02", "1/03", "1/04", "1/05", "1/06", "1/07", "1/08", "1/09"];
-
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: "Sleep Duration",
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(132, 99, 255)",
-      data: [6, 6.5, 6.75, 4.5, 7.5, 5.5, 6, 6.75, 7],
-    },
-  ],
-};
+import moment from "moment/moment";
 
 const SleepGraph = () => {
+  const [graph, setGraph] = useState([]);
+  const jwt =
+    "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzM1NDMwNDl9.bxcjqfqtTEr2JLjjqBiEMfqSn2XywCz9qjOLOQAFWlo";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch("http://localhost:3000/sleeps.json", {
+        method: "GET",
+        headers: { Authorization: "Bearer" + localStorage.getItem("jwt") },
+        headers: {
+          Authorization: "Bearer" + jwt,
+        },
+      })
+        .then((response) => {
+          response.json().then((json) => {
+            console.log(json);
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+  }, ["http://localhost:3000/sleeps.json"]);
+
+  const data = {
+    labels: graph?.data?.map((x) => x.date),
+    datasets: [
+      {
+        label: "Sleep Duration",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(132, 99, 255)",
+        data: graph?.data?.map((x) => x.asleep),
+      },
+    ],
+  };
+
   return (
     <div>
       <Line data={data} />
