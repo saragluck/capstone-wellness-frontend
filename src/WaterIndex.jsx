@@ -8,7 +8,7 @@ export function WaterIndex(props) {
       {props.waters.map((water) => (
         <div key={water.id}>
           <h2>
-            I drank {water.amount} of water at {moment(water.time).tz("GMT").format("hh:mm A")} on{" "}
+            I drank {water.amount} cups of water at {moment(water.time).tz("GMT").format("hh:mm A")} on{" "}
             {moment(water.date).format("MMMM Do, YYYY")}.
           </h2>
           <button className="btn btn-outline-dark rounded-pill"  onClick={() => props.onShowWater(water)}>Edit</button>

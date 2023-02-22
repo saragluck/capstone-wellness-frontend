@@ -19,7 +19,7 @@ export function SleepIndex(props) {
               moment
                 .duration(moment(sleep.awake, "YYYY/MM/DD hh:mm").diff(moment(sleep.asleep, "YYYY/MM/DD hh:mm")))
                 .asHours()
-            )}{" "}
+            ).toFixed(2)}{" "}
             hours
           </h3>
           <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowSleep(sleep)}>

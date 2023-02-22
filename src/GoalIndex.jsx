@@ -34,7 +34,7 @@ export function GoalIndex(props) {
       {props.goals.map((goal) => (
         <div key={goal.id}>
           <h2>
-            I want to drink {goal.goal} of {goal.category}.
+            I want to {goal.goal} of {goal.category}.
           </h2>
           <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowGoal(goal)}>
             Edit
