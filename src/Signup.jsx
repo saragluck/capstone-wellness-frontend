@@ -23,6 +23,13 @@ export function Signup() {
 
   return (
     <div id="signup">
+       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <h1>Signup</h1>
       <ul>
         {errors.map((error) => (
@@ -40,7 +47,7 @@ export function Signup() {
         </div>
         <div>
           <input
-            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill col-sm"
             name="email"
             type="email"
             placeholder="Email"
@@ -48,7 +55,7 @@ export function Signup() {
         </div>
         <div>
           <input
-            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill col-sm"
             name="password"
             type="password"
             placeholder="Password"
@@ -56,7 +63,7 @@ export function Signup() {
         </div>
         <div>
           <input
-            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill col-sm"
             name="password_confirmation"
             type="password"
             placeholder="Password Confirmation"
@@ -66,6 +73,16 @@ export function Signup() {
           Signup
         </button>
       </form>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

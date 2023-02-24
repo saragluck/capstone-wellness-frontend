@@ -11,6 +11,13 @@ export function LandingPage() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="container col sm-3">
         <Link to="/signup">
           <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
