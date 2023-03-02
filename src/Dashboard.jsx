@@ -6,8 +6,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { LogoutLink } from "./LogoutLink";
 import { Link } from "react-router-dom";
+import { LogSleep } from "./LogSleep";
 
 export function Dashboard() {
+
+  const [showLogSleep, setShowLogSleep] = useState(false);
+
+  const handleShowLogSleep = () => {
+    setShowLogSleep(true);
+  }
+
   const [goals, setGoals] = useState([]);
   const handleGoals = () => {
     console.log("handleIndexGoals");
@@ -46,6 +54,8 @@ export function Dashboard() {
       <LogoutLink />
       <h1>Dashboard</h1>
       <div>
+        <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowLogSleep}>Log Sleep</button>
+      {showLogSleep && <LogSleep onLogSleep={handleSleeps} />}
         <Link to="#setgoal">
           <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
             Set Goal

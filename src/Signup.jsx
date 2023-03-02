@@ -22,14 +22,7 @@ export function Signup() {
   };
 
   return (
-    <div id="signup">
-       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div className="d-flex align-items-center container-sm align-middle" id="signup">
       <h1>Signup</h1>
       <ul>
         {errors.map((error) => (
@@ -39,7 +32,7 @@ export function Signup() {
       <form onSubmit={handleSubmit}>
         <div>
           <input
-            className="bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
+            className="col-xs-3 bg-transparent form-control form-floating mb-3 mt-3 rounded-pill"
             name="name"
             type="text"
             placeholder="Name"
