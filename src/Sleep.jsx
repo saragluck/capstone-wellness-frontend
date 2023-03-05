@@ -73,7 +73,7 @@ export function Sleep(props) {
     <div>
       <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
       <SleepGraph />
-      <LogSleep onLogSleep={handleLogSleep} />
+      {/* <LogSleep onLogSleep={handleLogSleep} /> */}
       <SleepModal show={isSleepsShowVisible} onClose={handleClose}>
         <SleepsShow sleep={currentSleep} onUpdateSleep={handleUpdateSleep} onDestroySleep={handleDestroySleep} />
       </SleepModal>

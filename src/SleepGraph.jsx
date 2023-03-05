@@ -5,8 +5,6 @@ import moment from "moment/moment";
 
 const SleepGraph = () => {
   const [graph, setGraph] = useState([]);
-  const jwt =
-    "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzM1NDMwNDl9.bxcjqfqtTEr2JLjjqBiEMfqSn2XywCz9qjOLOQAFWlo";
 
   useEffect(() => {
     const fetchData = async () => {
