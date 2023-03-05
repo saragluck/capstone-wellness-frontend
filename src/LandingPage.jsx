@@ -7,18 +7,7 @@ import { Link } from "react-router-dom";
 export function LandingPage() {
   return (
     <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="container col sm-3">
+    <div className="centered">
         <Link to="/signup">
           <button type="button" className="btn btn-big btn-outline-dark rounded-pill">
             Sign Up
@@ -30,25 +19,7 @@ export function LandingPage() {
           </button>
         </Link>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+  
     </div>
   );
 }

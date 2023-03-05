@@ -1,13 +1,32 @@
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 .btn-circle.btn-xl {
-			width: 175px;
-			height: 175px;
-			padding: 18px 18px;
-			border-radius: 200px;
-      margin: 10px;
-			font-size: 25px;
-			text-align: center;
-		}
+	width: 175px;
+	height: 175px;
+	padding: 18px 18px;
+	border-radius: 200px;
+	margin: 10px;
+	font-size: 25px;
+	text-align: center;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+.bg {
+	/* The image used */
+	background-image: url("img_girl.jpg");
+
+	/* Full height */
+	height: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
