@@ -13,7 +13,13 @@ export function Dashboard() {
   const [showLogSleep, setShowLogSleep] = useState(false);
 
   const handleShowLogSleep = () => {
-    setShowLogSleep(true);
+    if (showLogSleep === false) {
+    setShowLogSleep(true)
+    }
+    else {
+      setShowLogSleep(false)
+    }
+
   }
 
 
@@ -41,14 +47,14 @@ export function Dashboard() {
 
   const [sleeps, setSleeps] = useState([]);
 
-  const handleSubmit = (event) => {
-      event.preventDefault();
-      const params = new FormData(event.target);
-      props.onLogSleep(params, () => event.target.reset());
-    };
+  // const handleSubmit = (event) => {
+  //     event.preventDefault();
+  //     const params = new FormData(event.target);
+  //     props.onLogSleep(params, () => event.target.reset());
+  //   };
  
 
-  useEffect(handleSubmit, []);
+  // useEffect(handleSubmit, []);
 
   return (
     <div>
@@ -56,7 +62,7 @@ export function Dashboard() {
       <h1>Dashboard</h1>
       <div>
         <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowLogSleep}>Log Sleep</button>
-      {showLogSleep && <LogSleep onLogSleep={handleSubmit} />}
+      {showLogSleep && <LogSleep />}
         <Link to="#setgoal">
           <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
             Set Goal
