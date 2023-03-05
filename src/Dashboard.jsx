@@ -16,6 +16,7 @@ export function Dashboard() {
     setShowLogSleep(true);
   }
 
+
   const [goals, setGoals] = useState([]);
   const handleGoals = () => {
     console.log("handleIndexGoals");
@@ -39,15 +40,15 @@ export function Dashboard() {
   useEffect(handleWaters, []);
 
   const [sleeps, setSleeps] = useState([]);
-  const handleSleeps = () => {
-    console.log("handleIndexSleeps");
-    axios.get("http://localhost:3000/sleeps.json").then((response) => {
-      console.log(response.data);
-      setSleeps(response.data);
-    });
-  };
 
-  useEffect(handleSleeps, []);
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      const params = new FormData(event.target);
+      props.onLogSleep(params, () => event.target.reset());
+    };
+ 
+
+  useEffect(handleSubmit, []);
 
   return (
     <div>
@@ -55,7 +56,7 @@ export function Dashboard() {
       <h1>Dashboard</h1>
       <div>
         <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowLogSleep}>Log Sleep</button>
-      {showLogSleep && <LogSleep onLogSleep={handleSleeps} />}
+      {showLogSleep && <LogSleep onLogSleep={handleSubmit} />}
         <Link to="#setgoal">
           <button type="button" className="btn btn-outline-dark btn-circle btn-xl">
             Set Goal

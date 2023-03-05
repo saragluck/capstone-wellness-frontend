@@ -22,7 +22,7 @@ export function Signup() {
   };
 
   return (
-    <div className="d-flex align-items-center container-sm align-middle" id="signup">
+    <div className="centered d-flex align-items-center container-sm align-middle" id="signup">
       <h1>Signup</h1>
       <ul>
         {errors.map((error) => (

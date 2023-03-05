@@ -5,6 +5,7 @@ export function LogSleep(props) {
     props.onLogSleep(params, () => event.target.reset());
   };
 
+
   return (
     <div>
       <h1>Log Sleep</h1>
@@ -18,7 +19,7 @@ export function LogSleep(props) {
         <div>
           Date: <input className="bg-transparent form-control rounded-pill" name="date" type="date" />
         </div>
-        <button className="btn btn-outline-dark rounded-pill" type="submit">
+        <button className="btn btn-outline-dark rounded-pill" type="submit" >
           Log Sleep
         </button>
       </form>
