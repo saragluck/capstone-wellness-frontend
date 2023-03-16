@@ -5,10 +5,10 @@ import { Productivity } from "./Productivity";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { LogoutLink } from "./LogoutLink";
-import { Link } from "react-router-dom";
 import { LogSleep } from "./LogSleep";
 import { SleepIndex } from "./SleepIndex";
 import { SetGoal } from "./SetGoal";
+import { GoalIndex } from "./GoalIndex";
 
 export function Dashboard() {
 
@@ -21,7 +21,6 @@ export function Dashboard() {
     else {
       setShowLogSleep(false)
     }
-
   }
 
   const handleLogSleep = (params, successCallback) => {
@@ -95,8 +94,9 @@ export function Dashboard() {
           Log Productivity
         </button>
       </div>
-      <Goals goals={goals}/>
+      <Goals/>
       <Sleep />
+      <GoalIndex goals={goals}/>
       <SleepIndex sleeps={sleeps}/>
       <Productivity />
       <Water />
