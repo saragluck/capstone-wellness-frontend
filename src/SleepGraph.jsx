@@ -8,11 +8,11 @@ const SleepGraph = () => {
   const [sleepData, setSleepData] = useState([]);
   const jwt = localStorage.getItem("jwt");
   const calculateDuration = (asleep, awake) => {
-    const start = moment(asleep, "h:mm");
-    const end = moment(awake, "h:mm");
-    const duration = moment.duration(end.diff(start));
-    return duration.asHours().toFixed(2);
-  };
+  return (24-Math.abs(
+    moment
+      .duration(moment(awake, "YYYY/MM/DD hh:mm").diff(moment(asleep, "YYYY/MM/DD hh:mm")))
+      .asHours()
+  )).toFixed(2)};
   
   useEffect(() => {
 
