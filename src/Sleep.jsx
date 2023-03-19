@@ -17,12 +17,9 @@ export function Sleep(props) {
       setSleeps(response.data);
     });
   };
-
-  const handleSleepGraph = () => {
-    axios.get("http://localhost:3000/sleeps.json");
-  };
+  
   useEffect(handleSleepIndex, []);
-
+  
   const handleLogSleep = (params, successCallback) => {
     console.log("handleLogSleep", params);
     axios.post("http://localhost:3000/sleeps.json", params).then((response) => {
@@ -67,13 +64,13 @@ export function Sleep(props) {
     });
   };
 
-  useEffect(handleSleepIndex, []);
+
 
   return (
     <div>
       <SleepIndex sleeps={sleeps} onShowSleep={handleShowSleep} />
       <SleepGraph />
-      {/* <LogSleep onLogSleep={handleLogSleep} /> */}
+      <LogSleep onLogSleep={handleLogSleep} />
       <SleepModal show={isSleepsShowVisible} onClose={handleClose}>
         <SleepsShow sleep={currentSleep} onUpdateSleep={handleUpdateSleep} onDestroySleep={handleDestroySleep} />
       </SleepModal>
