@@ -13,6 +13,8 @@ const SleepGraph = () => {
       .duration(moment(awake, "YYYY/MM/DD hh:mm").diff(moment(asleep, "YYYY/MM/DD hh:mm")))
       .asHours()
   )).toFixed(2)}; // logical calculation using the moment library to determine duration
+
+  const [dataChange, setDataChange] = useState(false);
   
   useEffect(() => {
 
