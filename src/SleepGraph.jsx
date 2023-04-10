@@ -27,7 +27,7 @@ const SleepGraph = () => {
     }; // function to get the data associated with the current user (using JWT authorization)
 
     fetchData();
-  }, [sleepData]);
+  }, []);
 
   const sleepDataWithDuration = sleepData.map((sleep) => {
     const date = moment(sleep.date).format("MMM D");

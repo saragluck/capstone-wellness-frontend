@@ -13,6 +13,7 @@ export function Sleep(props) {
 
   const handleSleepIndex = () => {
     axios.get("http://localhost:3000/sleeps.json").then((response) => {
+      console.log("got the data")
       console.log(response.data);
       setSleeps(response.data);
     });
