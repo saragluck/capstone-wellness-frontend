@@ -60,6 +60,7 @@ export function Sleep(props) {
   const handleDestroySleep = (sleep) => {
     console.log("handleDestroy", sleep);
     axios.delete(`http://localhost:3000/sleeps/${sleep.id}.json`).then((response) => {
+      console.log(response);
       setSleeps(sleeps.filter((s) => s.id !== sleep.id));
       handleClose();
     });

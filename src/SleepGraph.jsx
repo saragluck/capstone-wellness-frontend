@@ -15,6 +15,10 @@ const SleepGraph = () => {
   )).toFixed(2)}; // logical calculation using the moment library to determine duration
 
   const [dataChange, setDataChange] = useState(false);
+
+  const handleDataChange = () => { 
+    setDataChange(!dataChange)
+  };
   
   useEffect(() => {
 
@@ -29,7 +33,7 @@ const SleepGraph = () => {
     }; // function to get the data associated with the current user (using JWT authorization)
 
     fetchData();
-  }, []);
+  }, [dataChange]);
 
   const sleepDataWithDuration = sleepData.map((sleep) => {
     const date = moment(sleep.date).format("MMM D");
