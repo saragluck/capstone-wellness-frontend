@@ -6,15 +6,14 @@ import "moment-timezone";
 export function SleepIndex(props) {
   
 
-
   return (
     <div>
       <h1>Sleep</h1>
       {props.sleeps.map((sleep) => (
         <div key={sleep.id}>
           <h2>
-            I slept from {moment(sleep.asleep).tz("GMT").format("hh:mm A")} to{" "}
-            {moment(sleep.awake).tz("GMT").format("hh:mm A")} on {moment(sleep.date).format("MMMM Do, YYYY")}.
+            I slept from {sleep.asleep} to{" "}
+            {sleep.awake} on {sleep.date}.
           </h2>
           <h3>
             Duration:{" "}

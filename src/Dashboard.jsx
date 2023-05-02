@@ -96,8 +96,8 @@ export function Dashboard() {
       </div>
       <Goals/>
       <Sleep />
-      <GoalIndex goals={goals}/>
-      <SleepIndex sleeps={sleeps}/>
+      {/* <GoalIndex goals={goals}/>
+      <SleepIndex sleeps={sleeps}/> */}
       <Productivity />
       <Water />
     </div>
