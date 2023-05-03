@@ -16,7 +16,7 @@ export function SleepIndex(props) {
             {sleep.awake} on {sleep.date}.
           </h2>
           <h3>
-          Duration: {sleep.duration}
+          Duration: {sleep.duration} hours
           </h3>
           <button className="btn btn-outline-dark rounded-pill" onClick={() => props.onShowSleep(sleep)}>
             Edit
