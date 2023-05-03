@@ -7,13 +7,6 @@ import { useState, useEffect } from "react";
 const SleepGraph = () => {
   const [sleepData, setSleepData] = useState([]);
   const jwt = localStorage.getItem("jwt");
-  const calculateDuration = (asleep, awake) => { //takes in params for asleep time and awake time
-  return (24-Math.abs( 
-    moment
-      .duration(moment(awake, "YYYY/MM/DD hh:mm").diff(moment(asleep, "YYYY/MM/DD hh:mm")))
-      .asHours()
-  )).toFixed(2)}; // logical calculation using the moment library to determine duration
-
   const [dataChange, setDataChange] = useState(false);
 
   const handleDataChange = () => { 
@@ -35,14 +28,9 @@ const SleepGraph = () => {
     fetchData();
   }, []);
 
-  const sleepDataWithDuration = sleepData.map((sleep) => {
-    const date = moment(sleep.date).format("MMM D");
-    const duration = calculateDuration(sleep.asleep, sleep.awake);
-    return { date, duration };
-  });  // grabs the date from the sleep instance, grabs the asleep and awake time and calls the calculateDuration function, then returns the date and associated duration
 
-  const labels = sleepDataWithDuration.map((data) => data.date); // sets the labels of the graph x axis to be the dates
-  const durationData = sleepDataWithDuration.map((data) => data.duration); // grabs the duration data
+  const labels = sleepData.map((data) => data.date); // sets the labels of the graph x axis to be the dates
+  const durationData = sleepData.map((data) => data.duration); // grabs the duration data
 
   const data = {
     labels: labels,
