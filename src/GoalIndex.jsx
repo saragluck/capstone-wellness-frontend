@@ -5,9 +5,10 @@ export function GoalIndex(props) {
   
   return (
 
-    <div>
+    <div className="carousel-wrapper">
       <h1>Goals</h1>
-         <Carousel>
+      
+        <Carousel infiniteLoop useKeyboardArrows autoPlay>
       {props.goals.map((goal) => (
         <div key={goal.id}>
           <h2>
