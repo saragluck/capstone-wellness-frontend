@@ -9,7 +9,6 @@ import { LogSleep } from "./LogSleep";
 import { SleepIndex } from "./SleepIndex";
 import { SetGoal } from "./SetGoal";
 import { GoalIndex } from "./GoalIndex";
-import { Login } from "./Login";
 
 export function Dashboard() {
 
