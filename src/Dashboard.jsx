@@ -9,6 +9,7 @@ import { LogSleep } from "./LogSleep";
 import { SleepIndex } from "./SleepIndex";
 import { SetGoal } from "./SetGoal";
 import { GoalIndex } from "./GoalIndex";
+import { Login } from "./Login";
 
 export function Dashboard() {
 
@@ -74,15 +75,16 @@ export function Dashboard() {
 
   const [sleeps, setSleeps] = useState([]);
 
-
+  const name = localStorage.getItem("name");
 
   return (
     <div>
       <LogoutLink />
       <h1>Dashboard</h1>
+      <h1>Hi, {name}!</h1>
       <div>
-        <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowLogSleep}>Log Sleep</button>
-      {showLogSleep && <LogSleep onLogSleep={handleLogSleep} />}
+        {/* <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowLogSleep}>Log Sleep</button>
+      {showLogSleep && <LogSleep onLogSleep={handleLogSleep} />} */}
         <button type="button" className="btn btn-outline-dark btn-circle btn-xl" onClick={handleShowSetGoal}>
             Set Goal
           </button>

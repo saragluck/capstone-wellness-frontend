@@ -5,6 +5,7 @@ const jwt = localStorage.getItem("jwt");
 if (jwt) {
   axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
 }
+const name = localStorage.getItem("name");
 
 export function Login() {
   const [errors, setErrors] = useState([]);
@@ -19,6 +20,7 @@ export function Login() {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
+        localStorage.setItem("name", response.data.name);
         event.target.reset();
         window.location.href = "/dashboard"; // Change this to hide a modal, redirect to a specific page, etc.
       })
