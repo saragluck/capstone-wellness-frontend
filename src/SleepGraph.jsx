@@ -21,7 +21,7 @@ const SleepGraph = () => {
     }; // function to get the data associated with the current user (using JWT authorization)
 
     fetchData();
-  }, []);
+  }, [dataChange]);
 
 
   const labels = sleepData.map((data) => data.date); // sets the labels of the graph x axis to be the dates
