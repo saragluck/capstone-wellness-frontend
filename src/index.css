@@ -19,7 +19,7 @@ html {
 
 .bg {
 	/* The image used */
-	background-image: url("img_girl.jpg");
+	background-image: url("img.jpg");
 
 	/* Full height */
 	height: 100%;
@@ -29,4 +29,3 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
