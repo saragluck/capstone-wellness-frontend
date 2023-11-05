@@ -1,6 +1,4 @@
 import { Line } from "react-chartjs-2";
-import axios from "axios";
-import { useState, useEffect } from "react";
 
 
 

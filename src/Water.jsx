@@ -68,7 +68,7 @@ export function Water(props) {
     <div>
       <WaterIndex waters={waters} onShowWater={handleShowWater} />
       <LogWater onLogWater={handleLogWater} />
-      <WaterGraph />
+      <WaterGraph waterData={waters}/>
       <WaterModal show={isWatersShowVisible} onClose={handleClose}>
         <WatersShow water={currentWater} onUpdateWater={handleUpdateWater} onDestroyWater={handleDestroyWater} />
       </WaterModal>
